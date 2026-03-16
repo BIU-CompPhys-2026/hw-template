@@ -8,4 +8,6 @@ Run with:
 from solution import *
 
 
-# (Public test cases will be defined per assignment)
+def test_add_returns_sum():
+    """Dry-run public test. Replace with real assignment tests."""
+    assert add(1, 2) == 3

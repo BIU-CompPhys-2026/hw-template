@@ -18,4 +18,8 @@ Remember: Code is cheap. Physical validation is expensive.
 
 # === Implement the functions below ===
 
-# (Functions will be defined per assignment)
+
+def add(a, b):
+    """Dry-run test function. Replace with real assignment functions."""
+    # TODO: implement this function
+    pass
