@@ -1,0 +1,39 @@
+# .github/workflows/classroom.yml
+#
+# Visible sanity tests — students see pass/fail on every push.
+# No secrets required.
+
+name: Sanity Tests
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  sanity-check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pytest numpy scipy matplotlib
+
+      - name: Check solution.py exists
+        run: |
+          if [ ! -f solution.py ]; then
+            echo "::error::solution.py not found in repo root!"
+            exit 1
+          fi
+
+      - name: Run public tests
+        run: pytest tests/test_public.py -v --tb=short
