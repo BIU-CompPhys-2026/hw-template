@@ -7,7 +7,7 @@
    ```bash
    pytest tests/ -v
    ```
-3. **Push to GitHub** — grading runs automatically via GitHub Classroom (check the assignment page for results)
+3. **Push to GitHub** — sanity tests run automatically (check the ✓/✗ icon next to your commit or the Actions tab)
 4. **Document** your physics reasoning and prompt history in `notebook.ipynb`
 
 ## Functions to Implement
@@ -33,7 +33,7 @@ In `notebook.ipynb`, complete the following (with plots and physics explanations
 
 - [ ] All functions in `solution.py` are implemented
 - [ ] Public tests pass locally (`pytest tests/ -v`)
-- [ ] Autograder passes (check GitHub Classroom)
+- [ ] Sanity tests pass on push (check the ✓/✗ icon on your commit)
 - [ ] `notebook.ipynb` contains plots and physics explanations for all 5 exercises
 - [ ] Prompt history is included (link or pasted conversation)
 
@@ -54,7 +54,7 @@ pip install -r requirements.txt
 ## Tips
 
 - The graded tests check **physical correctness**, not just code output
-- If public tests pass but the autograder fails, check your physics:
+- Even if public tests pass, additional hidden tests will check your physics after the deadline:
   - Is your PDF correctly normalized? What happens for x < x_min?
   - Does your MLE recover the known exponent from synthetic data?
   - Are your histogram bins truly logarithmically spaced?
